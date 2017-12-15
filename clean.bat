@@ -11,6 +11,9 @@ set /p repo=Repo name:
 echo %repo%
 set folders=
 set files=
+set bfgopts1=
+set bfgopts2=
+set bfgopts3=
 :opts
 cd %oneup%
 CHOICE /C 123Q /M "1-Remove file 2-Remove folder 3-Replace text Q-uit" 
@@ -79,10 +82,8 @@ echo %repl%
 echo create %home%rep.txt
 set sep="==>"
 echo %word%%sep%%repl%>>%home%rep.txt
-echo "check rep.txt"
-pause 
 sed -i 's/\"//g' %home%rep.txt
-echo "check rep.txt agaain"
+echo "check rep.txt"
 pause 
 cd %folder%
 sed -i 's;%word%;%repl%;g' %file%
@@ -110,7 +111,7 @@ if errorlevel 1 goto edit
 :edit
 set /p bfgopts=Fix the options: 
 :conf
-choice /c YSQ /m "Y-es, S-kip no remote changes, Q-uit Ready to push"
+choice /c YSQ /m "Ready to Push? Y-es, S-kip no remote changes, Q-uit"
 if errorlevel 3 goto quit
 if errorlevel 2 goto bfg
 if errorlevel 1 goto push
@@ -120,14 +121,15 @@ git push -f --all
 
 :bfg
 cd %oneup%
-echo "current options: %bfgopts%"
 pushd %cd%
 rmdir %repo%.git /s/q
 git clone --mirror https://github.com/%user%/%repo%.git
+mkdir BACKUP%repo%.git
+robocopy %repo%.git BACKUP%repo%.git /E 
 %BFG% %bfgopts% %repo%.git | grep -v "You can\|make people\|give up"
 
 cd %repo%.git 
-choice /m "Prune empty commits now"
+choice /m "Prune empty commits now" /d n /t 5
 if errorlevel 2 goto reflogcleanup
 if errorlevel 1 goto prunetoo
 
@@ -143,6 +145,6 @@ git push
 cd %oneup%
 cd %repo%
 git pull --rebase -f
-popd
+cd %home%
 :quit
 pause
