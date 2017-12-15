@@ -107,7 +107,7 @@ cd %repo%
 echo %cd%
 git commit 
 set bfgopts=%bfgopts1% %bfgopts2% %bfgopts3%
-choice /m "current options: %bfgopts% edit them"
+choice /m "current options: %bfgopts% edit them" /d n /t 5
 if errorlevel 2 goto conf
 if errorlevel 1 goto edit
 :edit

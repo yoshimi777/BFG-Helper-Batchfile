@@ -4,7 +4,7 @@ This clumsy batch file works with the [BFG Repo-Cleaner by rtyley](https://githu
 
 Read about it [here](https://rtyley.github.io/bfg-repo-cleaner/) and grab a copy.
 
-`clean.bat` walks you through removing unwanted files, folders, or text before running BFG.  It **will** replace text, but it won't delete files or folders.  Instead it removes the cached copy and adds it to gitignore.  
+`clean.bat` walks you through removing unwanted files, folders, or text before running BFG.  It **will** replace text, but it won't delete files or folders.  Instead it removes the cached copy and adds it to gitignore.
 
 ***
 
@@ -66,6 +66,8 @@ Documents/
 The point is that you definitely don't want to place it *in* the dirty repo, but beside it.  The script assumes that it shares a parent directory with what it's trying to clean, and that the root directory of Repo2clean is Repo2clean, and not a subdirectory.
 
 When it asks for the Repo name (Repo2clean in our example), it assumes that the name is the same on GitHub and your local copy.  When it asks for a file path, it wants it in relation to root directory of said repo.  To remove Repo2clean's Dirtydirectory/ inside of Folder/, tell it, `folder/dirtydirectory` (leave out forward slash, it's added for you).  Remove just a file in the root: `dirtyfile.txt`.  If you want to clean somefile.txt in the directory folder/, you tell it `folder/somefile.txt`.  This is not how BFG works, by the way, but it's how git understands what specific file or folder we're looking for when removing the cached copy.
+
+***
 
 Direct download of BFG version I used: [here](http://repo1.maven.org/maven2/com/madgag/bfg/1.12.16/bfg-1.12.16.jar)
 
