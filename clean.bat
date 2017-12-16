@@ -92,7 +92,7 @@ sed -i 's;%word%;%repl%;g' %file%
 echo "check %file%"
 pause 
 git add %file%
-set bfgopts3=-rt rep.txt
+set bfgopts3=-rt %home%rep.txt
 popd
 cd %repo%
 echo %filepath% >> .gitignore
