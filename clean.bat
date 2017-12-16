@@ -97,6 +97,7 @@ popd
 cd %repo%
 echo %filepath% >> .gitignore
 git add .gitignore
+echo "you'll need to manually rm --cached %file% when we're done here."
 cd %oneup%
 choice /m "Is there more"
 if errorlevel 2 goto commit
