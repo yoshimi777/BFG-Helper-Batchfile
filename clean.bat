@@ -9,7 +9,7 @@ set /p user=GitHub UserName:
 echo %user%
 set /p repo=Repo name: 
 echo %repo%
-rmdir preclean%repo%.git
+rmdir preclean%repo%.git /s/q
 git clone --mirror https://github.com/%user%/%repo%.git preclean%repo%.git
 set folders=
 set files=
