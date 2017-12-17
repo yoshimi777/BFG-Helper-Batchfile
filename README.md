@@ -6,6 +6,8 @@ Read about it [here](https://rtyley.github.io/bfg-repo-cleaner/) and grab a copy
 
 `clean.bat` walks you through removing unwanted files, folders, or text before running BFG.  It **will** replace text, but it won't delete files or folders.  Instead it removes the cached copy and adds it to gitignore.
 
+Watch [an awkward demonstration of using the script](https://www.youtube.com/watch?v=p4HPGFNS77Q)
+
 ***
 
 If you accidentally pushed private data (password, key, token, etc.), consider it compromised.  Your first step was to **immediately** change the leaked password and/or generate a new token or key.
