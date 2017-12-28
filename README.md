@@ -1,4 +1,4 @@
-# BFG-Repo-Cleaner-Helper-Script
+# BFG-Repo-Cleaner-Helper-Script (Batch File)
 
 This clumsy batch file works with the [BFG Repo-Cleaner by rtyley](https://github.com/rtyley/bfg-repo-cleaner) which doesn't need help -- it's awesome.
 
@@ -7,6 +7,8 @@ Read about it [here](https://rtyley.github.io/bfg-repo-cleaner/) and grab a copy
 `clean.bat` walks you through removing unwanted files, folders, or text before running BFG.  It **will** replace text, but it won't delete files or folders.  Instead it removes the cached copy and adds it to gitignore.
 
 Watch [an awkward demonstration of using the script](https://www.youtube.com/watch?v=p4HPGFNS77Q)
+
+Or get [the python version](https://github.com/yoshimi777/BFG-Helper-Python)
 
 ***
 
